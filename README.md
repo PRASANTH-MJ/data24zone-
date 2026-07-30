@@ -25,15 +25,19 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Environment variables
 
-Copy `.env.example` to `.env.local` and fill in your Supabase project credentials to enable the contact form and auth:
+Copy `.env.example` to `.env.local` and fill in credentials to enable the contact form, course enrollment form, email delivery, and auth:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Without these set, the contact form still works end-to-end in a dev fallback mode (submissions are logged to the server console instead of written to Supabase).
+Without these set, forms still work end-to-end in a dev fallback mode (submissions are logged to the server console instead of being stored or emailed).
 
-If you do configure Supabase, create a `contact_submissions` table with columns matching `src/app/contact/actions.ts` (`name`, `email`, `phone`, `company`, `service`, `message`, `created_at`).
+**Supabase (optional storage):** if configured, create a `contact_submissions` table (`name`, `email`, `phone`, `company`, `service`, `message`, `created_at`) and a `course_enrollments` table (`name`, `email`, `phone`, `course`, `message`, `created_at`) matching `src/app/contact/actions.ts` / `src/app/academy/enroll-actions.ts`.
+
+**Email delivery (Web3Forms):** sign up free at [web3forms.com](https://web3forms.com) using the inbox you want submissions delivered to (e.g. `data24zone@gmail.com`) — it emails you an Access Key. Set `WEB3FORMS_ACCESS_KEY` to that key. Once set, the contact form and course enrollment form email submissions automatically to that inbox. Supabase storage and email delivery are independent — enable either or both.
+
+**Email delivery (Gmail SMTP):** set `SMTP_USER` to the sending Gmail address and `SMTP_PASSWORD` to a Gmail **App Password** (not your regular password) generated at [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords) — requires 2-Step Verification to be enabled on that Google account. Once set, both the contact form and course enrollment form email submissions to `CONTACT_RECEIVE_EMAIL` (defaults to `SMTP_USER` if unset). Supabase storage and email delivery are independent — enable either or both.
 
 ## Project structure
 

@@ -31,6 +31,13 @@ export function Navbar() {
     setOpenMenu(null);
   }, [pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
   return (
     <>
       <header
@@ -159,7 +166,7 @@ export function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="glass fixed inset-x-0 top-[64px] z-40 overflow-hidden border-b border-slate-200/60 lg:hidden dark:border-white/10"
+            className="fixed inset-x-0 top-[64px] z-40 max-h-[calc(100dvh-64px)] overflow-y-auto overflow-x-hidden overscroll-contain border-b border-slate-200/60 bg-white/98 shadow-xl backdrop-blur-xl lg:hidden dark:border-white/10 dark:bg-slate-900/98"
           >
             <ul className="container-page flex flex-col gap-1 py-4">
               {NAV_ITEMS.map((item) => (
@@ -176,7 +183,7 @@ export function Navbar() {
                         <li key={child.label}>
                           <Link
                             href={child.href}
-                            className="block rounded-lg px-3 py-2 text-sm text-slate-500 hover:text-primary dark:text-slate-400"
+                            className="block rounded-lg px-3 py-2 text-sm text-slate-600 hover:text-primary dark:text-slate-300"
                           >
                             {child.label}
                           </Link>
@@ -186,7 +193,7 @@ export function Navbar() {
                   )}
                 </li>
               ))}
-              <li className="mt-2 flex items-center justify-between gap-3 px-3">
+              <li className="mt-2 flex items-center justify-between gap-3 px-3 pb-2">
                 <ThemeToggle />
                 <Button href="/contact" size="sm" className="flex-1">
                   Get Started

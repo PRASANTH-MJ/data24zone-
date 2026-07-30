@@ -2,6 +2,7 @@
 
 import { z } from "zod";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
+import { isEmailConfigured, sendNotificationEmail } from "@/lib/email";
 import type { CourseEnrollmentValues } from "@/types";
 
 const enrollmentSchema = z.object({
@@ -22,6 +23,7 @@ export async function submitCourseEnrollment(
   }
 
   const { name, email, phone, course, message } = parsed.data;
+  let delivered = false;
 
   if (isSupabaseConfigured()) {
     const supabase = await createClient();
@@ -37,10 +39,34 @@ export async function submitCourseEnrollment(
     if (error) {
       return { success: false, error: "Something went wrong. Please try again." };
     }
-
-    return { success: true };
+    delivered = true;
   }
 
-  console.log("[course-enrollment:dev-fallback]", values);
+  if (isEmailConfigured()) {
+    try {
+      await sendNotificationEmail({
+        subject: `New course enrollment: ${course}`,
+        heading: "New Course Enrollment Request",
+        rows: [
+          { label: "Course", value: course },
+          { label: "Name", value: name },
+          { label: "Email", value: email },
+          { label: "Phone", value: phone },
+          { label: "Message", value: message || "—" },
+        ],
+      });
+      delivered = true;
+    } catch (err) {
+      console.error("[course-enrollment:email-failed]", err);
+      if (!delivered) {
+        return { success: false, error: "Something went wrong. Please try again." };
+      }
+    }
+  }
+
+  if (!delivered) {
+    console.log("[course-enrollment:dev-fallback]", values);
+  }
+
   return { success: true };
 }
