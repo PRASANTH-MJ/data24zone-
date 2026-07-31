@@ -8,7 +8,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "Replaced scattered spreadsheets with a unified CRM that tracks leads, orders, and branch-wise sales performance in real time.",
     technologies: ["React", "Next.js", "Supabase", "Zoho"],
-    image: "/images/portfolio/retail-crm-multi-branch-distributor.jpg",
+    image: "/images/portfolio/retail-crm-multi-branch-distributor.png",
+    imageRatio: 2.058,
     color: "from-primary to-violet",
   },
   {
@@ -18,7 +19,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "Connected finance, inventory, and procurement across three plants into one system, cutting month-end closing time from 10 days to 3.",
     technologies: ["Next.js", "PostgreSQL", "Python", "FastAPI"],
-    image: "/images/portfolio/unified-erp-manufacturing-group.jpg",
+    image: "/images/portfolio/unified-erp-manufacturing-group.png",
+    imageRatio: 1.969,
     color: "from-violet to-cyan",
   },
   {
@@ -28,7 +30,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "A live executive dashboard that pulls data from five regional ERPs, giving leadership a single view of revenue, stock, and target attainment.",
     technologies: ["Power BI", "Python", "Supabase", "SQL"],
-    image: "/images/portfolio/executive-sales-dashboard-fmcg.jpg",
+    image: "/images/portfolio/executive-sales-dashboard-fmcg.png",
+    imageRatio: 1.506,
     color: "from-cyan to-primary",
   },
   {
@@ -38,7 +41,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "A fast, SEO-optimized marketing site and investor portal that helped the client raise a seed round within two months of launch.",
     technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    image: "/images/portfolio/corporate-website-fintech-startup.jpg",
+    image: "/images/portfolio/corporate-website-fintech-startup.png",
+    imageRatio: 1.001,
     color: "from-primary to-cyan",
   },
   {
@@ -48,7 +52,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "An offline-first mobile app for field technicians to log deliveries, capture signatures, and sync data the moment connectivity returns.",
     technologies: ["React Native", "Supabase", "Node.js"],
-    image: "/images/portfolio/field-service-mobile-app.jpg",
+    image: "/images/portfolio/field-service-mobile-app.png",
+    imageRatio: 1.764,
     color: "from-violet to-primary",
   },
   {
@@ -58,7 +63,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "Automated invoice generation, approval routing, and payment reminders, cutting manual finance work by 70% each month.",
     technologies: ["Zoho", "Python", "Power Automate"],
-    image: "/images/portfolio/invoice-automation-workflow.jpg",
+    image: "/images/portfolio/invoice-automation-workflow.png",
+    imageRatio: 1.558,
     color: "from-cyan to-violet",
   },
   {
@@ -68,7 +74,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "Built a predictive analytics pipeline that flags at-risk accounts weeks in advance, helping the client reduce churn by 22%.",
     technologies: ["Python", "FastAPI", "Power BI", "PostgreSQL"],
-    image: "/images/portfolio/customer-churn-analytics-platform.jpg",
+    image: "/images/portfolio/customer-churn-analytics-platform.png",
+    imageRatio: 0.769,
     color: "from-primary to-violet",
   },
   {
@@ -78,7 +85,8 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     description:
       "A secure partner portal where 40+ franchise owners manage orders, view royalty statements, and access marketing assets in one place.",
     technologies: ["Next.js", "Supabase", "Tailwind CSS"],
-    image: "/images/portfolio/franchise-operations-portal.jpg",
+    image: "/images/portfolio/franchise-operations-portal.png",
+    imageRatio: 1.326,
     color: "from-violet to-cyan",
   },
 ];

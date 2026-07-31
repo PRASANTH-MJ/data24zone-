@@ -21,6 +21,7 @@ export interface Service {
   icon: LucideIcon;
   details?: string[];
   coverImage?: string;
+  coverImageRatio?: number;
 }
 
 export interface CourseModule {
@@ -51,6 +52,7 @@ export interface Course {
   tools?: string[];
   projects?: string[];
   coverImage?: string;
+  coverImageRatio?: number;
 }
 
 export interface AcademyFeature {
@@ -95,6 +97,7 @@ export interface PortfolioItem {
   description: string;
   technologies: string[];
   image: string;
+  imageRatio?: number;
   color: string;
 }
 
@@ -138,6 +141,7 @@ export interface BlogPost {
   date: string;
   readTime: string;
   image: string;
+  imageRatio?: number;
   content?: string;
 }
 

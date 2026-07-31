@@ -79,14 +79,17 @@ export default async function ServiceDetailPage({
             </Reveal>
 
             <Reveal delay={0.1}>
-              <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-violet/10 to-cyan/10 lg:aspect-square">
+              <div
+                style={service.coverImage ? { aspectRatio: service.coverImageRatio ?? 1.5 } : undefined}
+                className={`relative flex w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br from-primary/10 via-violet/10 to-cyan/10 ${service.coverImage ? "" : "aspect-video lg:aspect-square"}`}
+              >
                 {service.coverImage ? (
                   <Image
                     src={service.coverImage}
                     alt={service.title}
                     fill
                     sizes="(min-width: 1024px) 560px, 100vw"
-                    className="object-contain p-3"
+                    className="object-cover"
                     priority
                   />
                 ) : (

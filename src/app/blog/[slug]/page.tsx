@@ -85,7 +85,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </Reveal>
 
           <div
-            className={`relative mt-8 flex aspect-[21/9] w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br ${gradient} sm:aspect-[3/1]`}
+            style={post.image ? { aspectRatio: post.imageRatio ?? 1.78 } : undefined}
+            className={`relative mt-8 flex w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br ${gradient} ${post.image ? "" : "aspect-[21/9] sm:aspect-[3/1]"}`}
           >
             {post.image ? (
               <Image
@@ -94,7 +95,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
                 fill
                 sizes="100vw"
                 priority
-                className="object-cover object-top"
+                className="object-cover"
               />
             ) : (
               <Icon className="h-20 w-20 text-dark/70 sm:h-28 sm:w-28 dark:text-white/80" aria-hidden />

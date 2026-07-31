@@ -91,6 +91,8 @@ export const COURSES: Course[] = [
     projects: ["Sales performance dashboard for a retail dataset", "Customer churn analysis report", "Monthly KPI tracker automation"],
   
     coverImage: "/images/courses/data-analytics.jpg",
+  
+    coverImageRatio: 1.0,
   },
   {
     slug: "data-science",
@@ -161,6 +163,8 @@ export const COURSES: Course[] = [
     projects: ["Predicting customer lifetime value", "House price prediction model", "End-to-end data science case study"],
   
     coverImage: "/images/courses/data-science.jpg",
+  
+    coverImageRatio: 1.2496,
   },
   {
     slug: "artificial-intelligence",
@@ -231,6 +235,8 @@ export const COURSES: Course[] = [
     projects: ["AI-powered customer support assistant", "Document summarization tool", "Image classification mini-app"],
   
     coverImage: "/images/courses/artificial-intelligence.jpg",
+  
+    coverImageRatio: 1.2496,
   },
   {
     slug: "machine-learning",
@@ -301,6 +307,8 @@ export const COURSES: Course[] = [
     projects: ["Customer segmentation with clustering", "Fraud detection classifier", "Sales forecasting model"],
   
     coverImage: "/images/courses/machine-learning.jpg",
+  
+    coverImageRatio: 1.2496,
   },
   {
     slug: "python",
@@ -371,6 +379,8 @@ export const COURSES: Course[] = [
     projects: ["Personal expense tracker script", "Simple automation bot", "Command-line data tool"],
   
     coverImage: "/images/courses/python.jpg",
+  
+    coverImageRatio: 1.2496,
   },
   {
     slug: "sql",
@@ -441,6 +451,8 @@ export const COURSES: Course[] = [
     projects: ["E-commerce sales query dashboard", "Database schema for a booking system", "Performance-optimized reporting queries"],
   
     coverImage: "/images/courses/sql.jpg",
+  
+    coverImageRatio: 1.2496,
   },
   {
     slug: "power-bi",
@@ -511,6 +523,8 @@ export const COURSES: Course[] = [
     projects: ["Regional sales performance dashboard", "HR attrition analysis report", "Executive KPI dashboard"],
   
     coverImage: "/images/courses/power-bi.jpg",
+  
+    coverImageRatio: 1.2496,
   },
   {
     slug: "excel",
@@ -581,6 +595,8 @@ export const COURSES: Course[] = [
     projects: ["Automated monthly expense report", "Inventory tracking dashboard", "Sales pipeline tracker"],
   
     coverImage: "/images/courses/excel.jpg",
+  
+    coverImageRatio: 1.3333,
   },
 
   // Web Development
@@ -653,6 +669,8 @@ export const COURSES: Course[] = [
     projects: ["Personal portfolio website", "Restaurant landing page", "Responsive business website"],
   
     coverImage: "/images/courses/web-development.jpg",
+  
+    coverImageRatio: 1.2496,
   },
   {
     slug: "frontend-development",
@@ -723,6 +741,8 @@ export const COURSES: Course[] = [
     projects: ["E-commerce product catalog UI", "Admin dashboard interface", "Component library for a design system"],
   
     coverImage: "/images/courses/frontend-development.jpg",
+  
+    coverImageRatio: 1.2899,
   },
   {
     slug: "backend-development",
@@ -793,6 +813,8 @@ export const COURSES: Course[] = [
     projects: ["REST API for a task manager app", "Authentication service", "Inventory management API"],
   
     coverImage: "/images/courses/backend-development.jpg",
+  
+    coverImageRatio: 1.3333,
   },
   {
     slug: "full-stack-development",
@@ -863,6 +885,8 @@ export const COURSES: Course[] = [
     projects: ["Full-stack e-commerce platform", "Booking and reservation system", "Team collaboration tool"],
   
     coverImage: "/images/courses/full-stack-development.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "react",
@@ -933,6 +957,8 @@ export const COURSES: Course[] = [
     projects: ["Task management app", "Weather dashboard with a live API", "E-commerce storefront UI"],
   
     coverImage: "/images/courses/react.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "nextjs",
@@ -1003,6 +1029,8 @@ export const COURSES: Course[] = [
     projects: ["SEO-optimized marketing site", "Full-stack blog platform", "SaaS dashboard with authentication"],
   
     coverImage: "/images/courses/nextjs.jpg",
+  
+    coverImageRatio: 1.5,
   },
 
   // Mobile Development
@@ -1075,6 +1103,8 @@ export const COURSES: Course[] = [
     projects: ["To-do list mobile app", "Local business directory app", "Simple fitness tracker app"],
   
     coverImage: "/images/courses/mobile-app-development.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "react-native",
@@ -1145,6 +1175,8 @@ export const COURSES: Course[] = [
     projects: ["Cross-platform notes app", "Food delivery app UI", "Fitness tracking app"],
   
     coverImage: "/images/courses/react-native.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "flutter",
@@ -1215,6 +1247,8 @@ export const COURSES: Course[] = [
     projects: ["Habit tracker app", "Recipe sharing app", "Expense manager app"],
   
     coverImage: "/images/courses/flutter.jpg",
+  
+    coverImageRatio: 1.5,
   },
 
   // Growth
@@ -1287,6 +1321,8 @@ export const COURSES: Course[] = [
     projects: ["SEO audit for a live website", "30-day social media content calendar", "Google Ads campaign case study"],
   
     coverImage: "/images/courses/digital-marketing.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "cloud-computing",
@@ -1357,6 +1393,8 @@ export const COURSES: Course[] = [
     projects: ["Deploying a containerized web app", "Setting up a CI/CD pipeline", "Auto-scaling infrastructure demo"],
   
     coverImage: "/images/courses/cloud-computing.jpg",
+  
+    coverImageRatio: 1.5,
   },
 ];
 

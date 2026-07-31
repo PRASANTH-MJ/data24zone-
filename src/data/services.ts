@@ -27,7 +27,9 @@ export const SERVICES: Service[] = [
       "Automated follow-ups, reminders, and customer lifecycle tracking",
     ],
   
-    coverImage: "/images/portfolio/retail-crm-multi-branch-distributor.jpg",
+    coverImage: "/images/solutions/crm.png",
+  
+    coverImageRatio: 2.288,
   },
   {
     slug: "erp",
@@ -43,6 +45,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/erp.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "automation",
@@ -58,6 +62,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/automation.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "zoho",
@@ -73,6 +79,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/zoho.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "web",
@@ -88,6 +96,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/web.jpg",
+  
+    coverImageRatio: 1.3333,
   },
   {
     slug: "mobile",
@@ -102,7 +112,9 @@ export const SERVICES: Service[] = [
       "App Store and Play Store deployment and release management",
     ],
   
-    coverImage: "/images/courses/mobile-app-development.jpg",
+    coverImage: "/images/solutions/mobile.png",
+  
+    coverImageRatio: 1.181,
   },
   {
     slug: "dashboard",
@@ -118,6 +130,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/dashboard.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "api-integration",
@@ -133,6 +147,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/api-integration.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "cloud",
@@ -148,6 +164,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/cloud.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "support",
@@ -163,6 +181,8 @@ export const SERVICES: Service[] = [
     ],
   
     coverImage: "/images/solutions/support.jpg",
+  
+    coverImageRatio: 1.5,
   },
   {
     slug: "digital-marketing",
@@ -177,6 +197,8 @@ export const SERVICES: Service[] = [
       "Landing pages and funnels built to turn traffic into leads",
     ],
   
-    coverImage: "/images/courses/digital-marketing.jpg",
+    coverImage: "/images/solutions/digital-marketing.png",
+  
+    coverImageRatio: 1.805,
   },
 ];

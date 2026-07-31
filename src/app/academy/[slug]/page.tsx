@@ -107,7 +107,8 @@ export default async function CourseDetailPage({
 
             <Reveal delay={0.1}>
               <div
-                className={`relative flex aspect-square w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br ${course.gradient}`}
+                style={course.coverImage ? { aspectRatio: course.coverImageRatio ?? 1 } : undefined}
+                className={`relative flex w-full items-center justify-center overflow-hidden rounded-3xl bg-gradient-to-br ${course.gradient} ${course.coverImage ? "" : "aspect-square"}`}
               >
                 {course.coverImage ? (
                   <Image

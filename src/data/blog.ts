@@ -27,6 +27,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-07-14",
     readTime: "7 min read",
     image: "/images/blog/custom-software-roadmap-2026.jpg",
+    imageRatio: 1.8373,
     content: `Most businesses don't set out to build a mess of disconnected tools — it happens gradually. A spreadsheet becomes a makeshift CRM. A free form builder becomes the intake system. A chat app becomes the support desk. Each choice feels reasonable at the time because it solves an immediate problem cheaply. The trouble starts eighteen months later, when none of these tools talk to each other, data lives in five places at once, and every new hire needs a half-day just to learn which system owns which piece of truth.
 
 A software roadmap is simply the discipline of deciding, before you buy or build anything, what your systems need to look like in twelve, twenty-four, and thirty-six months — and then choosing today's tools so they fit that shape instead of fighting it. It doesn't mean over-engineering a startup with enterprise architecture on day one. It means asking three questions before every purchase: what data will this system own, what other systems will eventually need that data, and how hard will it be to get the data back out if we outgrow this tool. Answering those questions up front costs an afternoon. Answering them after the fact costs a migration project.
@@ -49,6 +50,7 @@ None of this requires a massive upfront investment or a big-bang replatforming p
     date: "2026-06-30",
     readTime: "8 min read",
     image: "/images/blog/practical-ai-adoption-smbs.jpg",
+    imageRatio: 1.5912,
     content: `Every SMB owner has, by now, sat through a pitch promising that AI will transform their business. Most of those pitches are vague on purpose, because specificity would reveal how narrow the actual use case is. The businesses that get genuine value from AI in 2026 aren't the ones chasing the most impressive demo — they're the ones who picked one boring, well-defined, repetitive problem and automated it properly. AI adoption succeeds or fails on problem selection far more than on model quality.
 
 The first phase of any sensible AI rollout is an inventory of repetitive judgment calls — the small decisions your team makes dozens of times a day that follow a pattern but still require a human to read something and decide. Categorizing support tickets, drafting first-pass responses to common inquiries, extracting line items from supplier invoices, flagging unusual transactions for review — these are ideal candidates because they're bounded, they have historical examples to learn from, and getting them 80% right still saves meaningful time even before the system is perfect. Contrast this with open-ended goals like "use AI to improve customer experience," which sound strategic but give a project team nothing concrete to build or measure.
@@ -71,6 +73,7 @@ The businesses we've seen succeed with AI share a common trait: they treat it as
     date: "2026-06-18",
     readTime: "9 min read",
     image: "/images/blog/scalable-apis-fastapi-supabase.jpg",
+    imageRatio: 1.7737,
     content: `FastAPI and Supabase have become one of our default stacks for client APIs, and it's worth explaining why, because the reasoning matters more than the specific tools. FastAPI gives you async-first request handling, automatic OpenAPI documentation, and request/response validation through Pydantic with almost no boilerplate. Supabase gives you a managed Postgres database with built-in row-level security, auth, and realtime subscriptions. Together they let a small team ship a genuinely production-grade backend without standing up separate services for auth, database administration, and API documentation.
 
 The first pattern worth getting right is connection management. Supabase's managed Postgres instance has a connection limit, and a naive FastAPI app that opens a new database connection per request will exhaust that limit under moderate load, especially if you're running multiple server instances. The fix is to use Supabase's connection pooler (PgBouncer, running in transaction mode) for your application traffic, and to configure your ORM or query layer — whether that's SQLAlchemy, asyncpg directly, or the Supabase Python client — to reuse a small, bounded pool of connections rather than opening one per request. We typically size pools conservatively, around 10-20 connections per service instance, and rely on horizontal scaling rather than fatter pools when load increases.
@@ -93,6 +96,7 @@ None of these patterns are exotic, but getting them right from the start avoids 
     date: "2026-07-05",
     readTime: "6 min read",
     image: "/images/blog/automation-hours-saved-fewer-errors.jpg",
+    imageRatio: 1.7902,
     content: `When we started working with a mid-sized distribution client, their order processing looked like this: a sales rep would receive an order by email or WhatsApp, manually enter it into Zoho CRM, then re-enter the same information into their inventory system, then again into their accounting software to generate an invoice. Three separate manual entries for one order, done by three different people, with no guarantee any of them matched. The team wasn't careless — the process itself simply demanded triple data entry, and triple data entry inevitably produces mismatches.
 
 The first step wasn't automation at all — it was mapping the actual workflow as it existed, warts and included. We sat with each team member for a half-day and documented every manual step, every workaround, and every "well, normally we do X, but if it's a rush order we do Y instead." This step is the one most automation projects skip, and it's why so many automation efforts fail: you cannot automate a process you don't fully understand, and most processes have more exceptions baked in than anyone remembers until you ask.
@@ -115,6 +119,7 @@ If there's a single lesson from this project worth generalizing, it's to automat
     date: "2026-07-20",
     readTime: "6 min read",
     image: "/images/blog/breaking-into-data-tech-careers.jpg",
+    imageRatio: 1.6343,
     content: `Every year we interview dozens of students and career-switchers trying to break into data and tech roles, and the same misconception shows up constantly: the belief that a longer list of certificates and courses is what gets you hired. It isn't. What actually gets a first-time candidate hired is evidence that they can do the job, even in miniature — and certificates, by themselves, are not evidence of that. A course completion certificate tells us you finished a course. A project tells us you can apply what you learned to something messy and real.
 
 If you're trying to break into data analytics, the single highest-leverage thing you can do is find a genuinely messy, real dataset — government open data, a public API, even your own city's transit or weather data — and produce one honest, complete analysis from it: clean the data, deal with the missing values and inconsistencies that always exist in real datasets, build two or three visualizations that answer a specific question, and write up what you found in plain language. This matters more than working through ten more tutorial datasets that have already been cleaned for you, because tutorial datasets don't teach you the actual job, which is 70% cleaning and judgment calls and 30% analysis.
@@ -137,6 +142,7 @@ Finally, don't underestimate the value of structured, industry-oriented training
     date: "2026-06-22",
     readTime: "7 min read",
     image: "/images/blog/dashboards-power-bi-raw-data-to-decisions.jpg",
+    imageRatio: 1.8472,
     content: `We've built dashboards for dozens of clients, and the failure pattern is remarkably consistent: a beautiful dashboard gets delivered, everyone is impressed in the launch meeting, and within a month nobody is opening it anymore. The dashboard isn't wrong, exactly — it's just not answering the question anyone actually has when they open it. Understanding why this happens, and how to avoid it, matters more than any particular Power BI feature or visual style.
 
 The root cause is almost always that the dashboard was built around what data was available rather than around the specific decisions it needs to support. A sales dashboard with fifteen charts covering revenue by region, by product, by rep, by month, and by channel looks comprehensive, but a regional manager opening it on a Monday morning has one real question: "which of my accounts need attention this week." If the dashboard doesn't answer that question in the first five seconds, the manager will go back to whatever spreadsheet or gut-feel process they used before, because that process, however manual, at least gets them to an answer directly.
