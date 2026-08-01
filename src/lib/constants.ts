@@ -5,7 +5,7 @@ export const SITE_CONFIG = {
     "Helping businesses and students grow through software solutions, AI, automation, and industry-oriented training.",
   url: "https://data24zone.com",
   ogImage: "/og-image.png",
-  email: "hello@data24zone.in",
+  email: "hello@data24zone.com",
   phone: "+91 93605 28096",
   whatsapp: "919360528096",
   address: "Goundanur, Perur, Coimbatore, Tamil Nadu, India",

@@ -27,9 +27,9 @@ export const SERVICES: Service[] = [
       "Automated follow-ups, reminders, and customer lifecycle tracking",
     ],
   
-    coverImage: "/images/solutions/crm.png",
+    coverImage: "/images/solutions/crm.jpg",
   
-    coverImageRatio: 2.288,
+    coverImageRatio: 1.5,
   },
   {
     slug: "erp",
