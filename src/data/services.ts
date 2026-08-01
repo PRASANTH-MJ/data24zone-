@@ -112,9 +112,9 @@ export const SERVICES: Service[] = [
       "App Store and Play Store deployment and release management",
     ],
   
-    coverImage: "/images/solutions/mobile.png",
-  
-    coverImageRatio: 1.181,
+    coverImage: "/images/solutions/mobile.jpg",
+
+    coverImageRatio: 1.5,
   },
   {
     slug: "dashboard",
@@ -197,8 +197,8 @@ export const SERVICES: Service[] = [
       "Landing pages and funnels built to turn traffic into leads",
     ],
   
-    coverImage: "/images/solutions/digital-marketing.png",
-  
-    coverImageRatio: 1.805,
+    coverImage: "/images/solutions/digital-marketing.jpg",
+
+    coverImageRatio: 1.5,
   },
 ];

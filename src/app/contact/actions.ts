@@ -2,7 +2,6 @@
 
 import { z } from "zod";
 import { createClient, isSupabaseConfigured } from "@/lib/supabase/server";
-import { isEmailConfigured, sendNotificationEmail } from "@/lib/email";
 import type { ContactFormValues } from "@/types";
 
 const contactSchema = z.object({
@@ -24,7 +23,6 @@ export async function submitContactForm(
   }
 
   const { name, email, phone, company, service, message } = parsed.data;
-  let delivered = false;
 
   if (isSupabaseConfigured()) {
     const supabase = await createClient();
@@ -41,33 +39,7 @@ export async function submitContactForm(
     if (error) {
       return { success: false, error: "Something went wrong. Please try again." };
     }
-    delivered = true;
-  }
-
-  if (isEmailConfigured()) {
-    try {
-      await sendNotificationEmail({
-        subject: `New contact form submission from ${name}`,
-        heading: "New Contact Form Submission",
-        rows: [
-          { label: "Name", value: name },
-          { label: "Email", value: email },
-          { label: "Phone", value: phone },
-          { label: "Company", value: company || "—" },
-          { label: "Service", value: service },
-          { label: "Message", value: message },
-        ],
-      });
-      delivered = true;
-    } catch (err) {
-      console.error("[contact-form:email-failed]", err);
-      if (!delivered) {
-        return { success: false, error: "Something went wrong. Please try again." };
-      }
-    }
-  }
-
-  if (!delivered) {
+  } else {
     console.log("[contact-form:dev-fallback]", values);
   }
 

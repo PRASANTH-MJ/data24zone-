@@ -1,9 +1,6 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
-import { useState, type FormEvent } from "react";
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { SITE_CONFIG, SOCIAL_URLS } from "@/lib/constants";
 import {
   FacebookIcon,
@@ -52,16 +49,6 @@ const SOCIALS = [
 ];
 
 export function Footer() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "done">("idle");
-
-  function handleSubscribe(e: FormEvent) {
-    e.preventDefault();
-    if (!email) return;
-    setStatus("done");
-    setEmail("");
-  }
-
   return (
     <footer className="relative overflow-hidden border-t border-slate-200 bg-light dark:border-white/10 dark:bg-dark">
       <div className="container-page grid grid-cols-2 gap-10 py-16 sm:grid-cols-3 lg:grid-cols-6">
@@ -132,45 +119,6 @@ export function Footer() {
             </ul>
           </div>
         ))}
-      </div>
-
-      <div className="border-t border-slate-200 dark:border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-6 py-8 lg:flex-row">
-          <div>
-            <h3 className="text-sm font-semibold text-dark dark:text-white">
-              Subscribe to our newsletter
-            </h3>
-            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
-              Product updates, tech insights, and course launches — no spam.
-            </p>
-          </div>
-          <form onSubmit={handleSubscribe} className="flex w-full max-w-sm gap-2">
-            <label htmlFor="footer-newsletter" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="footer-newsletter"
-              type="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="you@company.com"
-              className="w-full rounded-full border border-slate-300 bg-white px-4 py-2.5 text-sm text-dark outline-none focus-visible:border-primary dark:border-white/10 dark:bg-white/5 dark:text-white"
-            />
-            <button
-              type="submit"
-              aria-label="Subscribe"
-              className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-brand text-white transition-transform hover:scale-105"
-            >
-              <Send className="h-4 w-4" />
-            </button>
-          </form>
-        </div>
-        {status === "done" && (
-          <p className="container-page pb-4 text-sm text-primary" role="status">
-            Thanks for subscribing! Check your inbox to confirm.
-          </p>
-        )}
       </div>
 
       <div className="border-t border-slate-200 py-6 dark:border-white/10">

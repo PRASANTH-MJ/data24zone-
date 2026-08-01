@@ -8,6 +8,7 @@ import { AlertCircle, CheckCircle2, Loader2, Send } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { submitContactForm } from "@/app/contact/actions";
+import { isWeb3FormsConfigured, submitToWeb3Forms } from "@/lib/web3forms";
 
 const SERVICE_OPTIONS = [
   "Custom CRM Development",
@@ -34,7 +35,12 @@ type ContactFormSchema = z.infer<typeof contactFormSchema>;
 const fieldClasses =
   "w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm text-dark outline-none transition-colors placeholder:text-slate-400 focus:border-primary focus:ring-2 focus:ring-primary/30 dark:border-white/10 dark:bg-white/5 dark:text-white dark:placeholder:text-slate-500";
 
-export function ContactForm() {
+interface ContactFormProps {
+  defaultService?: string;
+  defaultMessage?: string;
+}
+
+export function ContactForm({ defaultService, defaultMessage }: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState<string>("");
 
@@ -50,8 +56,8 @@ export function ContactForm() {
       email: "",
       phone: "",
       company: "",
-      service: "",
-      message: "",
+      service: SERVICE_OPTIONS.includes(defaultService ?? "") ? defaultService : "",
+      message: defaultMessage ?? "",
     },
   });
 
@@ -60,15 +66,41 @@ export function ContactForm() {
     setStatusMessage("");
 
     try {
-      const result = await submitContactForm(values);
-      if (result.success) {
-        setStatus("success");
-        setStatusMessage("Message sent! We'll get back to you within 24 hours.");
-        reset();
-      } else {
+      const emailConfigured = isWeb3FormsConfigured();
+      const emailDelivered = emailConfigured
+        ? await submitToWeb3Forms({
+            subject: `New contact form submission from ${values.name}`,
+            heading: "New Contact Form Submission",
+            rows: [
+              { label: "Name", value: values.name },
+              { label: "Email", value: values.email },
+              { label: "Phone", value: values.phone },
+              { label: "Company", value: values.company || "—" },
+              { label: "Service", value: values.service },
+              { label: "Message", value: values.message },
+            ],
+          }).catch(() => false)
+        : false;
+
+      const dbResult = await submitContactForm(values);
+
+      if (!dbResult.success) {
         setStatus("error");
-        setStatusMessage(result.error ?? "Something went wrong. Please try again.");
+        setStatusMessage(dbResult.error ?? "Something went wrong. Please try again.");
+        return;
       }
+
+      if (emailConfigured && !emailDelivered) {
+        setStatus("error");
+        setStatusMessage(
+          "We couldn't send your message right now. Please try again or email us directly.",
+        );
+        return;
+      }
+
+      setStatus("success");
+      setStatusMessage("Message sent! We'll get back to you within 24 hours.");
+      reset({ name: "", email: "", phone: "", company: "", service: "", message: "" });
     } catch {
       setStatus("error");
       setStatusMessage("Something went wrong. Please try again.");
@@ -169,7 +201,7 @@ export function ContactForm() {
         </label>
         <select
           id="service"
-          defaultValue=""
+          defaultValue={SERVICE_OPTIONS.includes(defaultService ?? "") ? defaultService : ""}
           className={cn(fieldClasses, "appearance-none")}
           aria-invalid={errors.service ? "true" : "false"}
           aria-describedby={errors.service ? "service-error" : undefined}

@@ -48,7 +48,13 @@ const SOCIALS = [
   { label: "YouTube", href: SOCIAL_URLS.youtube, icon: YoutubeIcon },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string; message?: string }>;
+}) {
+  const { service, message } = await searchParams;
+
   return (
     <>
       <section className="relative overflow-hidden pt-36 pb-16 sm:pt-40 sm:pb-20">
@@ -89,7 +95,7 @@ export default function ContactPage() {
                   Fill out the form below and a member of our team will reach out shortly.
                 </p>
                 <div className="mt-6">
-                  <ContactForm />
+                  <ContactForm defaultService={service} defaultMessage={message} />
                 </div>
               </GlassCard>
             </Reveal>

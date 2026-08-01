@@ -43,11 +43,11 @@ In hPanel → **Websites** → your site → **Advanced** → **Node.js**:
 3. **Application startup file:** `server.js`
 4. **Application URL:** `data24zone.com` (your domain)
 5. **Environment variables** — add these (see `.env.example` for the full list):
-   - `WEB3FORMS_ACCESS_KEY` — required for the contact form and course
-     enrollment form to actually deliver email. Get this free at
-     [web3forms.com](https://web3forms.com).
-   - `CONTACT_RECEIVE_EMAIL` — optional, only used by the (currently unused)
-     Gmail SMTP path; safe to leave unset.
+   - `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` — required for the contact form to
+     actually deliver email. Get this free at [web3forms.com](https://web3forms.com).
+     Must use the `NEXT_PUBLIC_` prefix — Web3Forms' free tier only accepts
+     submissions made directly from the browser, so this key ships in
+     client-side JS (that's expected; it's how Web3Forms is designed to work).
    - `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` — only if
      you set up Supabase for storing form submissions or auth; otherwise
      leave unset.

@@ -22,7 +22,6 @@ import { GradientBlobs, GridPattern } from "@/components/ui/gradient-blobs";
 import { Badge } from "@/components/ui/badge";
 import { ToolBadge } from "@/components/ui/tool-badge";
 import { Reveal } from "@/components/ui/reveal";
-import { CourseEnrollForm } from "@/components/forms/course-enroll-form";
 import { COURSES } from "@/data/courses";
 import { SOFT_SKILLS } from "@/data/soft-skills";
 import { getModuleWeekRange } from "@/lib/utils";
@@ -60,6 +59,10 @@ export default async function CourseDetailPage({
     (c) => c.slug !== course.slug && c.category === course.category,
   ).slice(0, 3);
 
+  const enrollHref = `/contact?service=${encodeURIComponent("Academy Training")}&message=${encodeURIComponent(
+    `I'd like to enroll in the "${course.title}" course. Please share the next batch dates and enrollment steps.`,
+  )}`;
+
   return (
     <>
       <section className="relative overflow-hidden pt-36 pb-16 sm:pt-40 sm:pb-20">
@@ -95,7 +98,7 @@ export default async function CourseDetailPage({
                 {course.description}
               </p>
               <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                <Button href="#enroll" size="lg">
+                <Button href={enrollHref} size="lg">
                   Enroll Now
                   <ArrowRight className="h-4 w-4" aria-hidden />
                 </Button>
@@ -194,7 +197,7 @@ export default async function CourseDetailPage({
                   </div>
                 </li>
               </ul>
-              <Button href="#enroll" size="md" className="mt-6 w-full">
+              <Button href={enrollHref} size="md" className="mt-6 w-full">
                 Enroll Now
               </Button>
             </GlassCard>
@@ -398,27 +401,6 @@ export default async function CourseDetailPage({
           </div>
         </section>
       )}
-
-      <section id="enroll" className="scroll-mt-24 bg-light py-20 sm:py-28 dark:bg-dark/40">
-        <div className="container-page">
-          <div className="mx-auto max-w-2xl text-center">
-            <Reveal>
-              <h2 className="text-2xl font-bold tracking-tight text-dark sm:text-3xl dark:text-white">
-                Enroll in <span className="text-gradient">{course.title}</span>
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                Fill out this form and our team will confirm your seat and next batch dates. The
-                course is pre-selected — no need to search for it again.
-              </p>
-            </Reveal>
-          </div>
-          <Reveal delay={0.1} className="mx-auto mt-10 max-w-2xl">
-            <GlassCard hover={false} className="p-6 sm:p-8">
-              <CourseEnrollForm courseName={course.title} />
-            </GlassCard>
-          </Reveal>
-        </div>
-      </section>
 
       {related.length > 0 && (
         <section className="py-20 sm:py-28">

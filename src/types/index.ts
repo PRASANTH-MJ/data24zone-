@@ -164,11 +164,3 @@ export interface ContactFormValues {
   service: string;
   message: string;
 }
-
-export interface CourseEnrollmentValues {
-  name: string;
-  email: string;
-  phone: string;
-  course: string;
-  message?: string;
-}
