@@ -44,3 +44,4 @@ next-env.d.ts
 # raw source uploads already processed into public/images and public/logo.png
 /Images*
 /logo/
+/Carriculam/

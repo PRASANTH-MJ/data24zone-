@@ -31,6 +31,8 @@ export function CourseExplorer() {
       <span id="ai" className="absolute -top-28" aria-hidden />
       <span id="web" className="absolute -top-28" aria-hidden />
       <span id="mobile" className="absolute -top-28" aria-hidden />
+      <span id="cyber" className="absolute -top-28" aria-hidden />
+      <span id="design" className="absolute -top-28" aria-hidden />
 
       <div
         role="tablist"

@@ -5,12 +5,13 @@ import { GradientBlobs, GridPattern } from "@/components/ui/gradient-blobs";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ACADEMY_FEATURES } from "@/data/academy-features";
+import { COURSES } from "@/data/courses";
 import { CourseExplorer } from "./course-explorer";
 
 export const metadata: Metadata = {
   title: "Academy",
   description:
-    "Data24Zone Academy offers industry-ready training in Data Analytics, AI & Machine Learning, Web Development, Mobile Development, and Digital Marketing — with live classes, mentoring, internships, and placement assistance.",
+    "Data24Zone Academy offers industry-ready training in Data Analytics, AI & Machine Learning, Web Development, Mobile Development, Cybersecurity, Product & Design, and Digital Marketing — with live classes, mentoring, internships, and placement assistance.",
 };
 
 export default function AcademyPage() {
@@ -33,8 +34,9 @@ export default function AcademyPage() {
             </Reveal>
             <Reveal delay={0.1}>
               <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-                19 career-focused programs across data, AI, web, and mobile — taught by
-                practitioners, built around live projects, and backed by real placement support.
+                {COURSES.length} career-focused programs across data, AI, web, mobile, cybersecurity,
+                and design — taught by practitioners, built around live projects, and backed by real
+                placement support.
               </p>
             </Reveal>
           </div>
