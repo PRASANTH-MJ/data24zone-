@@ -54,7 +54,11 @@ export function Testimonials() {
                     <p className="mt-4 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                       &ldquo;{testimonial.review}&rdquo;
                     </p>
-                    <div className="mt-5 flex" aria-label={`${testimonial.rating} out of 5 stars`}>
+                    <div
+                      className="mt-5 flex"
+                      role="img"
+                      aria-label={`${testimonial.rating} out of 5 stars`}
+                    >
                       {Array.from({ length: 5 }).map((_, i) => (
                         <Star
                           key={i}

@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "About Us",
   description:
     "Data24Zone is a technology startup building software, automation, and AI solutions while training the next generation of tech talent through our Academy.",
+  alternates: { canonical: "/about" },
 };
 
 const VALUES = [

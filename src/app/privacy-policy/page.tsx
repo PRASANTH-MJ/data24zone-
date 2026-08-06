@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
     "Read Data24Zone's Privacy Policy to understand what information we collect, how we use it, and the choices you have regarding your data.",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 const LAST_UPDATED = "July 1, 2026";

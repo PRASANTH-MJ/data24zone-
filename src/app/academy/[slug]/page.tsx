@@ -25,6 +25,8 @@ import { Reveal } from "@/components/ui/reveal";
 import { COURSES } from "@/data/courses";
 import { SOFT_SKILLS } from "@/data/soft-skills";
 import { getModuleWeekRange } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/json-ld";
+import { getBreadcrumbSchema, getCourseSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   return COURSES.map((course) => ({ slug: course.slug }));
@@ -42,6 +44,19 @@ export async function generateMetadata({
   return {
     title: course.title,
     description: course.description,
+    alternates: { canonical: `/academy/${course.slug}` },
+    openGraph: {
+      title: course.title,
+      description: course.description,
+      type: "website",
+      ...(course.coverImage ? { images: [{ url: course.coverImage }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: course.title,
+      description: course.description,
+      ...(course.coverImage ? { images: [course.coverImage] } : {}),
+    },
   };
 }
 
@@ -65,6 +80,14 @@ export default async function CourseDetailPage({
 
   return (
     <>
+      <JsonLd data={getCourseSchema(course)} />
+      <JsonLd
+        data={getBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Academy", path: "/academy" },
+          { name: course.title, path: `/academy/${course.slug}` },
+        ])}
+      />
       <section className="relative overflow-hidden pt-36 pb-16 sm:pt-40 sm:pb-20">
         <GridPattern />
         <GradientBlobs />

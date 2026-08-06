@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Software Solutions",
   description:
     "Custom CRM, ERP, automation, web, mobile, dashboards, API integration, cloud and support solutions engineered by Data24Zone to help your business scale.",
+  alternates: { canonical: "/solutions" },
 };
 
 export default function SolutionsPage() {

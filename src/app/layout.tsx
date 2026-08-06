@@ -8,7 +8,9 @@ import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { BackToTop } from "@/components/layout/back-to-top";
 import { CookieBanner } from "@/components/layout/cookie-banner";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { JsonLd } from "@/components/seo/json-ld";
 import { SITE_CONFIG } from "@/lib/constants";
+import { getRootJsonLd } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -76,16 +78,6 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: SITE_CONFIG.name,
-  url: SITE_CONFIG.url,
-  description: SITE_CONFIG.mission,
-  email: SITE_CONFIG.email,
-  telephone: SITE_CONFIG.phone,
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -98,10 +90,7 @@ export default function RootLayout({
       className={`${inter.variable} ${poppins.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-white text-dark dark:bg-dark dark:text-white">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
-        />
+        <JsonLd data={getRootJsonLd()} />
         <a
           href="#main-content"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[200] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white"

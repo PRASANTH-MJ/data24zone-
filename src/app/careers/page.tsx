@@ -22,6 +22,7 @@ export const metadata: Metadata = {
   title: "Careers",
   description:
     "Join Data24Zone and help build the future of business technology. Explore open roles in software development, AI, automation, and training.",
+  alternates: { canonical: "/careers" },
 };
 
 const WHY_ITEMS = [

@@ -47,7 +47,7 @@ export function Services() {
                       href={`/solutions/${service.slug}`}
                       className="group mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-primary-dark dark:text-primary-light dark:hover:text-white"
                     >
-                      Read More
+                      Read More<span className="sr-only"> about {service.title}</span>
                       <ArrowRight
                         className="h-4 w-4 transition-transform group-hover:translate-x-1"
                         aria-hidden

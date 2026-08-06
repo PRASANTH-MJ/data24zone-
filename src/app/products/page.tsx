@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Products",
   description:
     "Discover LifeOS, Data24Zone's all-in-one productivity and personal growth platform, plus our upcoming suite of business products including School ERP, HRMS, Inventory Management, and more.",
+  alternates: { canonical: "/products" },
 };
 
 export default function ProductsPage() {

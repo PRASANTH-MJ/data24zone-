@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Explore CRMs, ERPs, dashboards, websites, mobile apps, automations, and analytics platforms Data24Zone has built for clients across industries.",
+  alternates: { canonical: "/portfolio" },
 };
 
 export default function PortfolioPage() {

@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   title: "Contact Us",
   description:
     "Get in touch with Data24Zone for custom CRM, ERP, automation, AI, web/mobile development or training enquiries. We'll get back to you within 24 hours.",
+  alternates: { canonical: "/contact" },
 };
 
 const CONTACT_DETAILS = [

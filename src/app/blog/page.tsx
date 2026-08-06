@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Blog",
   description:
     "Insights and resources on software development, AI adoption, business automation, and data analytics from the Data24Zone team.",
+  alternates: { canonical: "/blog" },
 };
 
 export default function BlogPage() {

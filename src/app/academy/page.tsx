@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "Academy",
   description:
     "Data24Zone Academy offers industry-ready training in Data Analytics, AI & Machine Learning, Web Development, Mobile Development, Cybersecurity, Product & Design, and Digital Marketing — with live classes, mentoring, internships, and placement assistance.",
+  alternates: { canonical: "/academy" },
 };
 
 export default function AcademyPage() {

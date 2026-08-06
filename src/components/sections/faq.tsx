@@ -5,6 +5,8 @@ import { ChevronDown, MessageCircleQuestion } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
+import { JsonLd } from "@/components/seo/json-ld";
+import { getFAQSchema } from "@/lib/schema";
 import { FAQS } from "@/data/faq";
 
 export function FAQ() {
@@ -18,6 +20,7 @@ export function FAQ() {
 
   return (
     <section id="faq" className="py-20 sm:py-28">
+      <JsonLd data={getFAQSchema(FAQS)} />
       <div className="container-page">
         <SectionHeading
           eyebrow="FAQ"

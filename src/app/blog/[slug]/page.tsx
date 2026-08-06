@@ -9,6 +9,8 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { Reveal } from "@/components/ui/reveal";
 import { BlogCard } from "@/components/sections/blog-card";
 import { BLOG_POSTS, getBlogMeta } from "@/data/blog";
+import { JsonLd } from "@/components/seo/json-ld";
+import { getBlogPostingSchema, getBreadcrumbSchema } from "@/lib/schema";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -37,12 +39,20 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
+      images: [{ url: post.image }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [post.image],
     },
   };
 }
@@ -72,6 +82,14 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
+      <JsonLd data={getBlogPostingSchema(post)} />
+      <JsonLd
+        data={getBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
+      />
       <section className="relative overflow-hidden pt-32 pb-10 sm:pt-36">
         <div className="container-page relative">
           <Reveal>

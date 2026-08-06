@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
     "Review the Terms & Conditions governing your use of Data24Zone's website, products, and services.",
+  alternates: { canonical: "/terms" },
 };
 
 const LAST_UPDATED = "July 1, 2026";

@@ -8,6 +8,8 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { GradientBlobs, GridPattern } from "@/components/ui/gradient-blobs";
 import { Reveal } from "@/components/ui/reveal";
 import { SERVICES } from "@/data/services";
+import { JsonLd } from "@/components/seo/json-ld";
+import { getBreadcrumbSchema, getServiceSchema } from "@/lib/schema";
 
 export async function generateStaticParams() {
   return SERVICES.map((service) => ({ slug: service.slug }));
@@ -25,6 +27,19 @@ export async function generateMetadata({
   return {
     title: service.title,
     description: service.description,
+    alternates: { canonical: `/solutions/${service.slug}` },
+    openGraph: {
+      title: service.title,
+      description: service.description,
+      type: "website",
+      ...(service.coverImage ? { images: [{ url: service.coverImage }] } : {}),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: service.title,
+      description: service.description,
+      ...(service.coverImage ? { images: [service.coverImage] } : {}),
+    },
   };
 }
 
@@ -42,6 +57,14 @@ export default async function ServiceDetailPage({
 
   return (
     <>
+      <JsonLd data={getServiceSchema(service)} />
+      <JsonLd
+        data={getBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Solutions", path: "/solutions" },
+          { name: service.title, path: `/solutions/${service.slug}` },
+        ])}
+      />
       <section className="relative overflow-hidden pt-36 pb-16 sm:pt-40 sm:pb-20">
         <GridPattern />
         <GradientBlobs />
