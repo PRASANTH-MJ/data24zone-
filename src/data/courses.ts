@@ -1703,6 +1703,10 @@ export const COURSES: Course[] = [
       "CTF-style capstone solving a structured set of recon-to-privilege-escalation machines",
       "Incident response case reconstructing a simulated breach from a memory/disk image",
     ],
+
+    coverImage: "/images/courses/cybersecurity.jpg",
+
+    coverImageRatio: 1.5,
   },
   // Data & AI (new)
   {
@@ -1800,6 +1804,10 @@ export const COURSES: Course[] = [
       "Small diffusion or GAN image generator evaluated with an FID score",
       "Real-time object detection app using a quantized, ONNX-exported model",
     ],
+
+    coverImage: "/images/courses/deep-learning.jpg",
+
+    coverImageRatio: 1.5,
   },
   {
     slug: "data-engineering",
@@ -1896,6 +1904,10 @@ export const COURSES: Course[] = [
       "CDC replication pipeline capturing change events from Postgres and syncing them to a cloud warehouse in near real time",
       "Cost-optimized cloud warehouse migration with before/after query-latency and cost benchmarks",
     ],
+
+    coverImage: "/images/courses/data-engineering.jpg",
+
+    coverImageRatio: 1.5,
   },
   {
     slug: "nlp",
@@ -1983,6 +1995,10 @@ export const COURSES: Course[] = [
       "Semantic search and RAG assistant that answers questions over a custom document set with citations",
       "Production NLP API serving a fine-tuned classification model with monitoring and drift detection",
     ],
+
+    coverImage: "/images/courses/nlp.jpg",
+
+    coverImageRatio: 1.5,
   },
   {
     slug: "rag-ai-automation",
@@ -2079,6 +2095,10 @@ export const COURSES: Course[] = [
       "Low-hallucination compliance RAG — a citation-strict retrieval system with an explicit 'I don't know' fallback",
       "RAG evaluation harness — a repeatable test suite scoring faithfulness and relevance across model changes",
     ],
+
+    coverImage: "/images/courses/rag-ai-automation.jpg",
+
+    coverImageRatio: 1.5,
   },
   {
     slug: "agentic-ai",
@@ -2175,6 +2195,10 @@ export const COURSES: Course[] = [
       "Human-in-the-loop finance agent — an agent that proposes budget changes but requires explicit approval before acting",
       "Deployed & monitored production agent — ship a containerized agent behind an API with tracing and a cost/latency dashboard",
     ],
+
+    coverImage: "/images/courses/agentic-ai.jpg",
+
+    coverImageRatio: 1.5,
   },
   // Product & Design
   {
@@ -2242,6 +2266,10 @@ export const COURSES: Course[] = [
       "PRD and evaluation rubric for a new AI-powered feature",
       "A/B test brief with sample-size calculation and a ship/no-ship readout",
     ],
+
+    coverImage: "/images/courses/product-management.jpg",
+
+    coverImageRatio: 1.5,
   },
   {
     slug: "ui-ux-design",
@@ -2308,6 +2336,10 @@ export const COURSES: Course[] = [
       "Documented design system and component library for a fictional startup",
       "Marketing landing page designed in Figma and shipped to code via an AI design-to-code tool",
     ],
+
+    coverImage: "/images/courses/ui-ux-design.jpg",
+
+    coverImageRatio: 1.5,
   },
 ];
 
