@@ -1,4 +1,5 @@
-import { ArrowRight, Rocket, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Rocket } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
@@ -75,9 +76,17 @@ export function Products() {
                 {/* Decorative app preview column */}
                 <div className="relative hidden min-h-[22rem] lg:block">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="relative flex h-72 w-72 items-center justify-center rounded-[2.5rem] bg-gradient-brand shadow-2xl shadow-primary/30">
-                      <div className="absolute inset-3 rounded-[2rem] border border-white/20" />
-                      <Sparkles className="h-20 w-20 text-white/90" aria-hidden />
+                    <div
+                      className="relative w-64 overflow-hidden rounded-[2rem] shadow-2xl shadow-primary/30"
+                      style={{ aspectRatio: 800 / 1047 }}
+                    >
+                      <Image
+                        src="/images/products/flowsy-preview.jpg"
+                        alt="Flowsy app preview"
+                        fill
+                        sizes="256px"
+                        className="object-cover"
+                      />
                     </div>
                   </div>
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowRight, Rocket, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GlassCard } from "@/components/ui/glass-card";
@@ -57,8 +58,8 @@ export default function ProductsPage() {
 
                 <div className="mb-10 flex flex-col items-center gap-6 text-center sm:flex-row sm:justify-between sm:text-left">
                   <div className="flex items-center gap-4">
-                    <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-brand text-white shadow-lg shadow-primary/25">
-                      <Rocket className="h-8 w-8" aria-hidden />
+                    <span className="relative flex h-16 w-16 shrink-0 overflow-hidden rounded-2xl shadow-lg shadow-primary/25">
+                      <Image src="/images/products/flowsy-icon.png" alt="Flowsy" fill sizes="64px" />
                     </span>
                     <div>
                       <h3 className="text-xl font-bold text-dark sm:text-2xl dark:text-white">
