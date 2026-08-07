@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Bot, Send, Sparkles, X } from "lucide-react";
+import { Bot, Mail, Phone, Send, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SITE_CONFIG } from "@/lib/constants";
 import {
   findBestAnswer,
   GREETING_ANSWER,
@@ -76,7 +77,7 @@ export function ChatbotWidget() {
         transition={{ delay: 0.5, duration: 0.3 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="fixed bottom-6 left-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-brand text-white shadow-lg shadow-primary/30"
+        className="fixed bottom-24 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-brand text-white shadow-lg shadow-primary/30"
       >
         <AnimatePresence mode="wait" initial={false}>
           <motion.span
@@ -101,7 +102,7 @@ export function ChatbotWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.97 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="glass fixed inset-x-4 bottom-24 z-50 flex h-[min(560px,70vh)] flex-col overflow-hidden rounded-2xl bg-white/95 shadow-2xl sm:inset-x-auto sm:left-6 sm:w-96 dark:bg-slate-900/95"
+            className="glass fixed inset-x-4 bottom-44 z-50 flex h-[min(560px,70vh)] flex-col overflow-hidden rounded-2xl bg-white/95 shadow-2xl sm:inset-x-auto sm:right-6 sm:w-96 dark:bg-slate-900/95"
           >
             <div className="flex items-center gap-3 border-b border-slate-200 bg-gradient-brand px-5 py-4 text-white dark:border-white/10">
               <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/20">
@@ -111,6 +112,23 @@ export function ChatbotWidget() {
                 <p className="truncate text-sm font-semibold">Data24Zone Assistant</p>
                 <p className="truncate text-xs text-white/80">Ask about courses, services & pricing</p>
               </div>
+            </div>
+
+            <div className="flex gap-2 border-b border-slate-200 px-4 py-3 dark:border-white/10">
+              <a
+                href={`tel:${SITE_CONFIG.phone.replace(/\s+/g, "")}`}
+                className="flex flex-1 items-center justify-center gap-1.5 rounded-full border border-slate-200 py-2 text-xs font-semibold text-dark transition-colors hover:border-primary/40 hover:text-primary dark:border-white/10 dark:text-white dark:hover:text-primary-light"
+              >
+                <Phone className="h-3.5 w-3.5" aria-hidden />
+                Call Us
+              </a>
+              <a
+                href={`mailto:${SITE_CONFIG.email}`}
+                className="flex flex-1 items-center justify-center gap-1.5 rounded-full border border-slate-200 py-2 text-xs font-semibold text-dark transition-colors hover:border-primary/40 hover:text-primary dark:border-white/10 dark:text-white dark:hover:text-primary-light"
+              >
+                <Mail className="h-3.5 w-3.5" aria-hidden />
+                Mail Us
+              </a>
             </div>
 
             <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
