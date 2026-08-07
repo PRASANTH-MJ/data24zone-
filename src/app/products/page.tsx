@@ -6,12 +6,12 @@ import { GlassCard } from "@/components/ui/glass-card";
 import { GradientBlobs, GridPattern } from "@/components/ui/gradient-blobs";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { LIFEOS_DESCRIPTION, LIFEOS_FEATURES, UPCOMING_PRODUCTS } from "@/data/products";
+import { FLOWSY_DESCRIPTION, FLOWSY_FEATURES, UPCOMING_PRODUCTS } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Products",
   description:
-    "Discover LifeOS, Data24Zone's all-in-one productivity and personal growth platform, plus our upcoming suite of business products including School ERP, HRMS, Inventory Management, and more.",
+    "Discover Flowsy, Data24Zone's all-in-one productivity and personal growth platform, plus our upcoming suite of business products including School ERP, HRMS, Inventory Management, and more.",
   alternates: { canonical: "/products" },
 };
 
@@ -33,21 +33,21 @@ export default function ProductsPage() {
               You
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-              Alongside client work, we invest in our own products. LifeOS is live in
+              Alongside client work, we invest in our own products. Flowsy is live in
               development today, with a full suite of business tools launching soon.
             </p>
           </Reveal>
         </div>
       </section>
 
-      {/* LifeOS full showcase */}
-      <section id="lifeos" className="relative overflow-hidden py-20 sm:py-28">
+      {/* Flowsy full showcase */}
+      <section id="flowsy" className="relative overflow-hidden py-20 sm:py-28">
         <div className="container-page">
           <SectionHeading
             eyebrow="Flagship Product"
-            title="Meet LifeOS"
-            gradientWord="LifeOS"
-            subtitle={LIFEOS_DESCRIPTION}
+            title="Meet Flowsy"
+            gradientWord="Flowsy"
+            subtitle={FLOWSY_DESCRIPTION}
           />
 
           <Reveal delay={0.1} className="mt-14">
@@ -62,7 +62,7 @@ export default function ProductsPage() {
                     </span>
                     <div>
                       <h3 className="text-xl font-bold text-dark sm:text-2xl dark:text-white">
-                        LifeOS
+                        Flowsy
                       </h3>
                       <p className="text-sm text-slate-600 dark:text-slate-300">
                         17 tools. One app. Zero clutter.
@@ -70,13 +70,13 @@ export default function ProductsPage() {
                     </div>
                   </div>
                   <Button href="/contact" size="lg">
-                    Explore LifeOS
+                    Explore Flowsy
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </Button>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-                  {LIFEOS_FEATURES.map(({ title, icon: Icon, comingSoon }, i) => (
+                  {FLOWSY_FEATURES.map(({ title, icon: Icon, comingSoon }, i) => (
                     <Reveal key={title} delay={i * 0.03}>
                       <div className="flex h-full flex-col items-start gap-3 rounded-2xl border border-slate-200 bg-white/70 p-4 dark:border-white/10 dark:bg-white/5">
                         <div className="flex w-full items-start justify-between">
@@ -105,7 +105,7 @@ export default function ProductsPage() {
             eyebrow="What's Next"
             title="Upcoming Products"
             gradientWord="Upcoming"
-            subtitle="A growing suite of business software, built with the same care as LifeOS — for schools, gyms, teams, warehouses, restaurants, and hospitals."
+            subtitle="A growing suite of business software, built with the same care as Flowsy — for schools, gyms, teams, warehouses, restaurants, and hospitals."
           />
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -142,11 +142,11 @@ export default function ProductsPage() {
                 Early Access
               </span>
               <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-dark sm:text-4xl dark:text-white">
-                Want early access to <span className="text-gradient">LifeOS</span> or our
+                Want early access to <span className="text-gradient">Flowsy</span> or our
                 upcoming products?
               </h2>
               <p className="max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-                Join our early access list and be the first to know when LifeOS and our upcoming
+                Join our early access list and be the first to know when Flowsy and our upcoming
                 business tools launch.
               </p>
               <Button href="/contact" size="lg">

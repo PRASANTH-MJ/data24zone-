@@ -3,6 +3,7 @@ import {
   Code2,
   Cloud,
   GraduationCap,
+  Infinity,
   LayoutDashboard,
   LifeBuoy,
   LineChart,
@@ -10,7 +11,6 @@ import {
   PenTool,
   Plug,
   Repeat,
-  Rocket,
   Shield,
   Smartphone,
   Sparkles,
@@ -145,10 +145,10 @@ export const NAV_ITEMS: NavItem[] = [
     href: "/products",
     children: [
       {
-        label: "LifeOS",
-        href: "/products#lifeos",
+        label: "Flowsy",
+        href: "/products#flowsy",
         description: "All-in-one productivity and personal growth platform",
-        icon: Rocket,
+        icon: Infinity,
       },
       {
         label: "School ERP",

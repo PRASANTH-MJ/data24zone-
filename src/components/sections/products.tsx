@@ -6,8 +6,8 @@ import { GradientBlobs } from "@/components/ui/gradient-blobs";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import {
-  LIFEOS_DESCRIPTION,
-  LIFEOS_TEASER_FEATURES,
+  FLOWSY_DESCRIPTION,
+  FLOWSY_TEASER_FEATURES,
   UPCOMING_PRODUCTS,
 } from "@/data/products";
 
@@ -25,10 +25,10 @@ export function Products() {
           eyebrow="Our Products"
           title="Building Products That Matter"
           gradientWord="Matter"
-          subtitle="Beyond client work, we build our own software — starting with LifeOS, our flagship personal productivity app, with an entire suite of business tools on the way."
+          subtitle="Beyond client work, we build our own software — starting with Flowsy, our flagship personal productivity app, with an entire suite of business tools on the way."
         />
 
-        {/* Featured LifeOS showcase */}
+        {/* Featured Flowsy showcase */}
         <Reveal delay={0.1} className="mt-16">
           <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-white/60 p-1 dark:border-white/10 dark:bg-white/[0.03]">
             <div className="relative overflow-hidden rounded-[1.35rem] p-8 sm:p-12">
@@ -41,14 +41,14 @@ export function Products() {
                     Flagship Product
                   </span>
                   <h3 className="text-2xl font-bold tracking-tight text-dark sm:text-3xl md:text-4xl dark:text-white">
-                    Life<span className="text-gradient">OS</span>
+                    <span className="text-gradient">Flowsy</span>
                   </h3>
                   <p className="mt-3 max-w-lg text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-                    {LIFEOS_DESCRIPTION}
+                    {FLOWSY_DESCRIPTION}
                   </p>
 
                   <div className="mt-8 flex flex-wrap gap-3">
-                    {LIFEOS_TEASER_FEATURES.map(({ title, icon: Icon, comingSoon }) => (
+                    {FLOWSY_TEASER_FEATURES.map(({ title, icon: Icon, comingSoon }) => (
                       <span
                         key={title}
                         className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/70 px-3.5 py-2 text-sm font-medium text-dark dark:border-white/10 dark:bg-white/5 dark:text-white"
@@ -65,8 +65,8 @@ export function Products() {
                   </div>
 
                   <div className="mt-10">
-                    <Button href="/products#lifeos" size="lg">
-                      Explore LifeOS
+                    <Button href="/products#flowsy" size="lg">
+                      Explore Flowsy
                       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Button>
                   </div>
@@ -82,7 +82,7 @@ export function Products() {
                   </div>
 
                   {FLOATING_FEATURE_CARDS.map(({ title, position }, i) => {
-                    const feature = LIFEOS_TEASER_FEATURES[i];
+                    const feature = FLOWSY_TEASER_FEATURES[i];
                     if (!feature) return null;
                     const Icon = feature.icon;
                     return (

@@ -27,7 +27,7 @@ const FOOTER_LINKS = {
     { label: "Digital Marketing", href: "/academy" },
   ],
   Products: [
-    { label: "LifeOS", href: "/products#lifeos" },
+    { label: "Flowsy", href: "/products#flowsy" },
     { label: "School ERP", href: "/products#upcoming" },
     { label: "HRMS", href: "/products#upcoming" },
     { label: "Gym Management", href: "/products#upcoming" },

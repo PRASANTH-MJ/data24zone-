@@ -24,7 +24,7 @@ import {
 } from "lucide-react";
 import type { ProductFeature, UpcomingProduct } from "@/types";
 
-export const LIFEOS_FEATURES: ProductFeature[] = [
+export const FLOWSY_FEATURES: ProductFeature[] = [
   { title: "Habit Tracker", icon: CheckSquare },
   { title: "Task Management", icon: ListTodo },
   { title: "Notes", icon: NotebookPen },
@@ -83,14 +83,14 @@ export const UPCOMING_PRODUCTS: UpcomingProduct[] = [
   },
 ];
 
-export const LIFEOS_TAGLINE =
+export const FLOWSY_TAGLINE =
   "An all-in-one productivity and personal growth platform.";
 
-export const LIFEOS_DESCRIPTION =
-  "LifeOS brings your habits, tasks, notes, finances, and wellness into a single beautifully designed app — so you spend less time switching tools and more time making progress.";
+export const FLOWSY_DESCRIPTION =
+  "Flowsy brings your habits, tasks, notes, finances, and wellness into a single beautifully designed app — so you spend less time switching tools and more time making progress.";
 
 // A curated, compact subset of the most compelling features for the home page teaser.
-export const LIFEOS_TEASER_FEATURE_TITLES = [
+export const FLOWSY_TEASER_FEATURE_TITLES = [
   "Habit Tracker",
   "Task Management",
   "Notes",
@@ -103,6 +103,6 @@ export const LIFEOS_TEASER_FEATURE_TITLES = [
   "Premium Version",
 ];
 
-export const LIFEOS_TEASER_FEATURES: ProductFeature[] = LIFEOS_FEATURES.filter((f) =>
-  LIFEOS_TEASER_FEATURE_TITLES.includes(f.title),
+export const FLOWSY_TEASER_FEATURES: ProductFeature[] = FLOWSY_FEATURES.filter((f) =>
+  FLOWSY_TEASER_FEATURE_TITLES.includes(f.title),
 );
