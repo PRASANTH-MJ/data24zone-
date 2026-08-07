@@ -8,6 +8,7 @@ import { ScrollProgress } from "@/components/layout/scroll-progress";
 import { BackToTop } from "@/components/layout/back-to-top";
 import { CookieBanner } from "@/components/layout/cookie-banner";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import { ChatbotWidget } from "@/components/layout/chatbot-widget";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SITE_CONFIG } from "@/lib/constants";
 import { getRootJsonLd } from "@/lib/schema";
@@ -106,6 +107,7 @@ export default function RootLayout({
           <Footer />
           <BackToTop />
           <WhatsAppButton />
+          <ChatbotWidget />
           <CookieBanner />
         </ThemeProvider>
       </body>
